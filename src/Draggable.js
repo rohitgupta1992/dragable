@@ -30,7 +30,7 @@ const Draggable = ({ children, width, height }) => {
       );
       const boundedY = Math.min(
         Math.max(newY, parentRect.top),
-        parentRect.bottom - elementRect.height
+        parentRect.bottom - (elementRect.height+6)
       );
 
       setPosition({
