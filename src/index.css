@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.draggable-box {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  background: white;
+}

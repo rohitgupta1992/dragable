@@ -1,0 +1,17 @@
+.draggable {
+  border: 1px solid #ccc;
+  position: absolute;
+}
+
+.title-bar {
+  background: #f0f0f0;
+  cursor: move;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 25px);
+}

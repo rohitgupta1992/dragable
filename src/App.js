@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Draggable from './Draggable';
 import './App.css';
 
-function App() {
+const App = () => {
+  const initialSize = { width: 200, height: 200 };
+  const [draggables, setDraggables] = useState([
+    <Draggable key={0} width={initialSize.width} height={initialSize.height} />
+  ]);
+console.log(draggables)
+  const addParent = () => {
+    const newSize = {
+      width: draggables[0].props.width + 50,
+      height: draggables[0].props.height + 70,
+    };
+    const newDraggable = (
+      <Draggable key={draggables.length} width={newSize.width} height={newSize.height}>
+        {draggables}
+      </Draggable>
+    );
+    setDraggables([newDraggable]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={addParent}>Add Parent</button>
+      <div className="draggable-container">
+        {draggables}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
